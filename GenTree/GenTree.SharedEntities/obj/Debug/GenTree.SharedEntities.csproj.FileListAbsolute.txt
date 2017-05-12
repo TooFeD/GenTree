@@ -1,0 +1,14 @@
+E:\Diplom\GenTree\GenTree.SharedEntities\bin\Debug\GenTree.SharedEntities.dll.config
+E:\Diplom\GenTree\GenTree.SharedEntities\bin\Debug\GenTree.SharedEntities.dll
+E:\Diplom\GenTree\GenTree.SharedEntities\bin\Debug\GenTree.SharedEntities.pdb
+E:\Diplom\GenTree\GenTree.SharedEntities\bin\Debug\EntityFramework.dll
+E:\Diplom\GenTree\GenTree.SharedEntities\bin\Debug\EntityFramework.SqlServer.dll
+E:\Diplom\GenTree\GenTree.SharedEntities\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\Diplom\GenTree\GenTree.SharedEntities\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Diplom\GenTree\GenTree.SharedEntities\bin\Debug\EntityFramework.xml
+E:\Diplom\GenTree\GenTree.SharedEntities\bin\Debug\EntityFramework.SqlServer.xml
+E:\Diplom\GenTree\GenTree.SharedEntities\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\Diplom\GenTree\GenTree.SharedEntities\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Diplom\GenTree\GenTree.SharedEntities\obj\Debug\GenTree.SharedEntities.csprojResolveAssemblyReference.cache
+E:\Diplom\GenTree\GenTree.SharedEntities\obj\Debug\GenTree.SharedEntities.dll
+E:\Diplom\GenTree\GenTree.SharedEntities\obj\Debug\GenTree.SharedEntities.pdb
