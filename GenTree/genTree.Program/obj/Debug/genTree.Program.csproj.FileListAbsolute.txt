@@ -71,3 +71,4 @@ E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.Properties.Resources
 E:\Diplom\GenTree\genTree.Program\obj\Debug\genTree.Program.csproj.GenerateResource.Cache
 E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.exe
 E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.pdb
+E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.Forms.Registration.resources

@@ -71,11 +71,31 @@ namespace GenTree.Program.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_1167 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_1167", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ім&apos;я: .
         /// </summary>
         internal static string LabelName {
             get {
                 return ResourceManager.GetString("LabelName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PhotoIcon {
+            get {
+                object obj = ResourceManager.GetObject("PhotoIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
