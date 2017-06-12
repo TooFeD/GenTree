@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using GenTree.SharedEntities.Models;
 
 namespace GenTree.DAL.Repository
@@ -8,7 +10,8 @@ namespace GenTree.DAL.Repository
         public UserRepository(DbContext dataContext) : base(dataContext)
         {
         }
+       
 
-        
+
     }
 }

@@ -77,6 +77,13 @@ namespace GenTree.Server.Controllers
             };
         }
 
+        [Route("ChangeUserInfo")]
+        public async Task<IHttpActionResult> ChangeUserInfo(ApplicationUser model)
+        {
+            ApplicationUser result = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+        
+            return Ok();
+        }
         // POST api/Account/Logout
         [Route("Logout")]
         public IHttpActionResult Logout()

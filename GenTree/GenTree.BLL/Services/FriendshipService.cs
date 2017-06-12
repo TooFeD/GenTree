@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using GenTree.DAL;
+using GenTree.DAL.Data;
 using GenTree.SharedEntities.Models;
 
 namespace GenTree.BLL.Services
@@ -26,6 +29,19 @@ namespace GenTree.BLL.Services
         {
            return Uow.FriendshipRepository.GetAllFolowers(userId);
         }
+
+        public List<ApplicationUser> GetAllUsers(string userId)
+        { var context = new ApplicationDbContext();
+            var allUser = context.Users.ToList();
+            return allUser;
+        }
+        public List<ApplicationUser> GetUserByName(string name)
+        {
+            var context = new ApplicationDbContext();
+            var allUser = context.Users.Where(x=>x.FirstName.Contains(name)|| x.LastName.Contains(name)).ToList();
+            return allUser;
+        }
+
 
         public void AcceptedFriends(string userId,string followerId)
         {

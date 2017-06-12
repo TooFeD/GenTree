@@ -64,6 +64,7 @@
     <Compile Include="Services\MemberService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\TreeService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GenTree.DAL\GenTree.DAL.csproj">

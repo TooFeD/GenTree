@@ -8,14 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GenTree.Program.Controller;
+using GenTree.Server.Models;
+using Newtonsoft.Json;
 
 namespace GenTree.Program.Forms
 {
     public partial class Registration : Form
     {
-        private string _registrationUrl = "http://localhost:55161/api/Account/Register";
+        private string _registrationUrl = "/api/Account/Register";
         public Registration()
         {
+            _registrationUrl = MainForm.ServerUrl + _registrationUrl;
             InitializeComponent();
         }
 
@@ -61,7 +65,26 @@ namespace GenTree.Program.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+                  RegisterBindingModel registerData = new RegisterBindingModel()
+                  {
+                      FirstName = nameText.Text,
+                      LastName =  secondText.Text,
+                      SecondName = lastText.Text,
+                      DateOfBith = new DateTime(Convert.ToInt32(Year.SelectedItem),Mounth.SelectedIndex+1,Convert.ToInt32(Day.SelectedItem)),
+                      Photo = imageToByteArray(pictureBox1.Image),
+                      Email = emailText.Text,
+                      Password = textBox1.Text,
+                      ConfirmPassword = textBox2.Text
+                       
+                  };
+            RequestController.HttpPOST(_registrationUrl, JsonConvert.SerializeObject(registerData), "application/json");
         }
+        public byte[] imageToByteArray(System.Drawing.Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, imageIn.RawFormat);
+            return ms.ToArray();
+        }
+
     }
 }

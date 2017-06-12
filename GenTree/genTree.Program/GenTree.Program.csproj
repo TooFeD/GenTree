@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acces.cs" />
+    <Compile Include="Controller\FriendController.cs" />
     <Compile Include="Controller\RequestController.cs" />
     <Compile Include="Forms\GenTreeForm.cs">
       <SubType>Form</SubType>

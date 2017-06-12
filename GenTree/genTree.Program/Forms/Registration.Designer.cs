@@ -107,7 +107,6 @@
             this.Mounth.FormattingEnabled = true;
             this.Mounth.IntegralHeight = false;
             this.Mounth.Items.AddRange(new object[] {
-            "Грудня",
             "Січня",
             "Лютого",
             "Березня",
@@ -118,7 +117,8 @@
             "Серпня",
             "Вересня",
             "Жовтня",
-            "Листопада"});
+            "Листопада",
+            "Грудня"});
             this.Mounth.Location = new System.Drawing.Point(84, 176);
             this.Mounth.MaxDropDownItems = 10;
             this.Mounth.Name = "Mounth";

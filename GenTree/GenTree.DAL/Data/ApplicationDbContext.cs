@@ -11,6 +11,7 @@ namespace GenTree.DAL.Data
         {
         }
 
+      
         public DbSet<Tree> Trees { get; set; }
         public DbSet<Friendship> Friendships { get; set; }
         public DbSet<Member> Members { get; set; }

@@ -16,6 +16,10 @@ namespace GenTree.DAL
         public ChildsRepository ChildsRepository;
         public MarriageRepository MarriageRepository;
       
+       // public ApplicationUserRepository ApplicationUserRepository;
+      
+     
+      
         //public ProductKeyRepository ProductKeyRepository;
 
 
@@ -30,6 +34,8 @@ namespace GenTree.DAL
             ParentsRepository = new ParentsRepository(dataContext);
             ChildsRepository = new ChildsRepository(dataContext);
             MarriageRepository = new MarriageRepository(dataContext);
+        
+        //    ApplicationUserRepository = new ApplicationUserRepository(dataContext);
             //ProductKeyRepository = new ProductKeyRepository(dataContext);
            
         }

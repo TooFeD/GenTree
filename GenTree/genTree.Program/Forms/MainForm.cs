@@ -20,6 +20,7 @@ namespace GenTree.Program
     public partial class MainForm : Form
     {
         public static string ServerUrl;
+        public static Acces Token;
         private string _loginUrl = "/token";
 
         public MainForm()
@@ -27,6 +28,8 @@ namespace GenTree.Program
             ServerUrl = GetUrlFromConfig();
             InitializeComponent();
             _loginUrl = ServerUrl + _loginUrl;
+            Email.Text = "Savvadson@gmail.com";
+            Password.Text = "Dtctkt_1594";
         }
 
        private string GetUrlFromConfig()
@@ -93,7 +96,7 @@ namespace GenTree.Program
             var token = RequestController.HttpPOST(_loginUrl,
               "grant_type=password&username=" + Email.Text + "&password=" + Password.Text, "application/x-www-form-urlencoded");
             Acces acces = JsonConvert.DeserializeObject<Acces>(token.Result);
-           
+            Token = acces;
              GenTreeForm genTree = new GenTreeForm(acces);
             genTree.Show();
             this.Hide();
