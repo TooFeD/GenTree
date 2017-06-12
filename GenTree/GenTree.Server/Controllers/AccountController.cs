@@ -60,13 +60,18 @@ namespace GenTree.Server.Controllers
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("UserInfo")]
-        public UserInfoViewModel GetUserInfo()
+        public async Task<UserInfoViewModel> GetUserInfo()
         {
             ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
-
+           ApplicationUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId()); ;
             return new UserInfoViewModel
             {
                 Email = User.Identity.GetUserName(),
+                FirstName = user.FirstName,
+                SecondName = user.SecondName,
+                LastName = user.LastName,
+                DateOfBith = user.DateOfBith,
+                Photo =  user.Photo,
                 HasRegistered = externalLogin == null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
@@ -334,7 +339,7 @@ namespace GenTree.Server.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() {FirstName = model.FirstName,UserName = model.Email, Email = model.Email,DateOfBith = model.DateOfBith, Photo = model.Photo,};
+            var user = new ApplicationUser() {FirstName = model.FirstName,SecondName = model.SecondName,LastName = model.LastName,UserName = model.Email, Email = model.Email,DateOfBith = model.DateOfBith, Photo = model.Photo,};
         
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 

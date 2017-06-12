@@ -64,7 +64,6 @@ E:\Diplom\GenTree\genTree.Program\bin\Debug\System.Web.WebPages.Razor.xml
 E:\Diplom\GenTree\genTree.Program\bin\Debug\System.Web.WebPages.xml
 E:\Diplom\GenTree\genTree.Program\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\Diplom\GenTree\genTree.Program\obj\Debug\genTree.Program.csprojResolveAssemblyReference.cache
-E:\Diplom\GenTree\genTree.Program\obj\Debug\genTree.Program.csproj.GenTree.Program.exe.config
 E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.MainForm.resources
 E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.Forms.MemberPanel.resources
 E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.Properties.Resources.resources
@@ -72,3 +71,9 @@ E:\Diplom\GenTree\genTree.Program\obj\Debug\genTree.Program.csproj.GenerateResou
 E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.exe
 E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.pdb
 E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.Forms.Registration.resources
+E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.Forms.GenTreeForm.resources
+E:\Diplom\GenTree\genTree.Program\bin\Debug\WebGrease.dll
+E:\Diplom\GenTree\genTree.Program\bin\Debug\Antlr3.Runtime.dll
+E:\Diplom\GenTree\genTree.Program\bin\Debug\Antlr3.Runtime.pdb
+E:\Diplom\GenTree\genTree.Program\bin\Debug\System.Web.Helpers.dll
+E:\Diplom\GenTree\genTree.Program\bin\Debug\System.Web.Helpers.xml

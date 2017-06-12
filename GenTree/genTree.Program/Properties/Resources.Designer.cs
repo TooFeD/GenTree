@@ -63,6 +63,16 @@ namespace GenTree.Program.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bez_nazvania {
+            get {
+                object obj = ResourceManager.GetObject("Bez_nazvania", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hearthstone_Screenshot_05_01_17_22_08_36 {
             get {
                 object obj = ResourceManager.GetObject("Hearthstone Screenshot 05-01-17 22.08.36", resourceCulture);

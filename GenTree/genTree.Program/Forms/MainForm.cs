@@ -5,11 +5,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GenTree.Program.Controller;
+using Newtonsoft.Json;
 
 
 namespace GenTree.Program
@@ -17,13 +19,32 @@ namespace GenTree.Program
    
     public partial class MainForm : Form
     {
-        private string _loginUrl = "http://localhost:55161/token";
+        public static string ServerUrl;
+        private string _loginUrl = "/token";
 
         public MainForm()
         {
+            ServerUrl = GetUrlFromConfig();
             InitializeComponent();
+            _loginUrl = ServerUrl + _loginUrl;
         }
 
+       private string GetUrlFromConfig()
+       {
+           var pathToFile = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)+"\\config.txt";
+            
+           if (System.IO.File.Exists(pathToFile))
+           {
+               return File.ReadAllText(pathToFile);
+           }
+           else
+           {
+               File.WriteAllText(pathToFile, "http://localhost/GenTree");
+                return File.ReadAllText(pathToFile);
+           }
+          
+
+       }
         private void Email_Enter(object sender, EventArgs e)
         {
             if(Email.Text == "Email")
@@ -69,9 +90,19 @@ namespace GenTree.Program
 
         private void button1_Click(object sender, EventArgs e)
         {
-          var s = RequestController.HttpPOST(_loginUrl,
-                "grant_type=password&username=" + Email.Text + "&password=" + Password.Text, null);
-            Debug.Write(s);
+            var token = RequestController.HttpPOST(_loginUrl,
+              "grant_type=password&username=" + Email.Text + "&password=" + Password.Text, "application/x-www-form-urlencoded");
+            Acces acces = JsonConvert.DeserializeObject<Acces>(token.Result);
+           
+             GenTreeForm genTree = new GenTreeForm(acces);
+            genTree.Show();
+            this.Hide();
+        
+        } 
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+          
         }
     }
 }

@@ -37,9 +37,9 @@ namespace GenTree.Server.Models
         [Required]
         
         public string FirstName { get; set; }
-
+        public string SecondName { get; set; }
+        public string LastName { get; set; }
         public DateTime DateOfBith { get; set; }
-
         public byte[] Photo { get; set; }
 
         [Required]
