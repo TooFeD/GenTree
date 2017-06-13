@@ -41,13 +41,15 @@ namespace GenTree.Server.Controllers
             var userId = User.Identity.GetUserId();
             var followersForAccepted = service.GetAllFolowers(userId);
 
-            var folowers = followersForAccepted.Select(x => new FollowerViewModel()
+            var folowers = followersForAccepted.Select(x => new UsersInfoViewModel()
             {
                 UserId = x.Id,
                 Photo = x.Photo,
                 FirstName = x.FirstName,
                 LastName = x.LastName,
-                SecondName = x.SecondName
+                SecondName = x.SecondName,
+                Email = x.Email,
+                DateOfBith = x.DateOfBith
             }).ToList();
 
 
@@ -83,16 +85,17 @@ namespace GenTree.Server.Controllers
             FriendshipService service = new FriendshipService(uow);
             var userId = User.Identity.GetUserId();
             var friendships =service.GetAllFriendByUser(userId);
+            var allUsers = new ApplicationDbContext().Users.ToList();
             var friends = friendships.Select(x => new FriendsViewModel()
             {
                 UserId = x.UserId,
-                Accepted = x.Accepted,
                 CanSeeTree = x.CanSeeTree,
                 Photo = x.User.Photo,
                 FirstName = x.User.FirstName,
                 LastName = x.User.LastName,
                 SecondName = x.User.SecondName,
                 DateOfBirth = x.User.DateOfBith,
+                Email = allUsers.First(y=>y.Id==x.UserId).Email
              
             });
             return await Task.FromResult(Ok(friends));

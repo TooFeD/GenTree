@@ -77,3 +77,5 @@ E:\Diplom\GenTree\genTree.Program\bin\Debug\Antlr3.Runtime.dll
 E:\Diplom\GenTree\genTree.Program\bin\Debug\Antlr3.Runtime.pdb
 E:\Diplom\GenTree\genTree.Program\bin\Debug\System.Web.Helpers.dll
 E:\Diplom\GenTree\genTree.Program\bin\Debug\System.Web.Helpers.xml
+E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.Forms.FriendView.resources
+E:\Diplom\GenTree\genTree.Program\obj\Debug\GenTree.Program.Forms.FriendsView.resources

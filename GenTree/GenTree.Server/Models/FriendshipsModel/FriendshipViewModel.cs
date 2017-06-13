@@ -18,9 +18,9 @@ namespace GenTree.Server.Models.FriendshipsModel
         public string FirstName { get; set; }
         public string SecondName { get; set; }
         public string LastName { get; set; }
+        public string Email { get; set; }
         public byte[] Photo { get; set; }
         public bool CanSeeTree { get; set; }
-        public bool Accepted { get; set; }
         public DateTime DateOfBirth { get; set; }
         public int TreeId { get; set; }
     }

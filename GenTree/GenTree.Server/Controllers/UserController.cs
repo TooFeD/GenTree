@@ -5,6 +5,7 @@ using System.Web.Http;
 using GenTree.BLL.Services;
 using GenTree.DAL;
 using GenTree.DAL.Data;
+using GenTree.Server.Models;
 using GenTree.Server.Models.FriendshipsModel;
 using Microsoft.AspNet.Identity;
 
@@ -24,17 +25,19 @@ namespace GenTree.Server.Controllers
             var userId = User.Identity.GetUserId();
             var users= service.GetAllUsers(userId);
 
-            var folowers = users.Select(x => new FollowerViewModel()
+            var returnUsers = users.Select(x => new UsersInfoViewModel()
             {
                 UserId = x.Id,
                 Photo = x.Photo,
                 FirstName = x.FirstName,
                 LastName = x.LastName,
-                SecondName = x.SecondName
+                SecondName = x.SecondName,
+                Email = x.Email,
+                DateOfBith = x.DateOfBith
             }).ToList();
 
 
-            return await Task.FromResult(Ok(folowers));
+            return await Task.FromResult(Ok(returnUsers));
         }
         [Route("GetUserByName")]
 
@@ -42,8 +45,8 @@ namespace GenTree.Server.Controllers
         {
             UnitOfWork uow = new UnitOfWork(new ApplicationDbContext());
             FriendshipService service = new FriendshipService(uow);
-          
-            var users = service.GetUserByName(name);
+            var userId = User.Identity.GetUserId();
+            var users = service.GetUserByName(name,userId);
 
             var folowers = users.Select(x => new FollowerViewModel()
             {

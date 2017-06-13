@@ -32,7 +32,7 @@ namespace GenTree.Program.Forms
             label2.Text = UserInfo.FirstName;
             label3.Text = UserInfo.SecondName;
             pictureBox1.Image = byteArrayToImage(UserInfo.Photo);
-            FriendController = new FriendController(flowLayoutPanel1);
+          
         }
 
         public Image byteArrayToImage(byte[] byteArrayIn)
@@ -61,6 +61,9 @@ namespace GenTree.Program.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
+            FriendController = new FriendController(flowLayoutPanel1);
+            button5.Text = "Підписники "+FriendController.GetCountFollowers();
+            button6.Text = "Друзі " + FriendController.GetCountFriends();
             tabControl1.SelectTab(tabPage2);
         }
 
@@ -74,6 +77,16 @@ namespace GenTree.Program.Forms
             if (textBox1.Text != "")
                 FriendController.ShowUserByName(textBox1.Text);
             else FriendController.ShowAllUser();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FriendController.ShowAllFolowers();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FriendController.ShowAllFriends();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -76,13 +77,20 @@ namespace GenTree.Server.Controllers
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
         }
-
+     
         [Route("ChangeUserInfo")]
         public async Task<IHttpActionResult> ChangeUserInfo(ApplicationUser model)
         {
-            ApplicationUser result = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-        
-            return Ok();
+            var userId = User.Identity.GetUserId();
+            var dbContext = new ApplicationDbContext();
+
+            var currentUser = dbContext.Set<ApplicationUser>().First(x => x.Id == userId);
+
+            currentUser.FirstName = model.FirstName;
+            currentUser.LastName = model.LastName;
+
+            dbContext.SaveChanges();
+            return await Task.FromResult(Ok());
         }
         // POST api/Account/Logout
         [Route("Logout")]

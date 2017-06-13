@@ -33,13 +33,13 @@ namespace GenTree.DAL.Repository
         public Friendship AllowSeeTreeById(string userId, string friendId)
         {
             return DataContext.Set<Friendship>()
-                .FirstOrDefault(x => x.UserId == userId&&x.FriendId == friendId);
+                .FirstOrDefault(x => x.UserId == friendId&&x.FriendId == userId);
         }
 
         public Friendship GetFriendship(string userId, string friendId)
         {
             return DataContext.Set<Friendship>()
-                .FirstOrDefault(x => x.FriendId == userId && x.UserId == friendId&&x.Accepted);
+                .FirstOrDefault(x => x.FriendId == friendId && x.UserId == userId&&x.Accepted);
         }
 
         

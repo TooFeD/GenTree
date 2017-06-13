@@ -31,6 +31,14 @@ namespace GenTree.Program.Controller
             }
             return json;
         }
+        public static async Task<string> HttpPOST(string url, Acces token)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Post, url);
+            request.Headers.Authorization = new AuthenticationHeaderValue(token.token_type, " " + token.access_token);
+            var response = new HttpClient().SendAsync(request);
+            var json = await response.Result.Content.ReadAsStringAsync();
+            return json;
+        }
 
         public static async Task<string> HttpGet(string url, Acces token)
         {

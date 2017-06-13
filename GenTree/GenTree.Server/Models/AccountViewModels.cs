@@ -39,6 +39,19 @@ namespace GenTree.Server.Models
         public string LoginProvider { get; set; }
     }
 
+    public class UsersInfoViewModel
+    {
+      
+        public string UserId { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public DateTime DateOfBith { get; set; }
+        public byte[] Photo { get; set; }
+       
+    }
+
     public class UserLoginInfoViewModel
     {
         public string LoginProvider { get; set; }

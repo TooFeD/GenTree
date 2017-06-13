@@ -32,13 +32,13 @@ namespace GenTree.BLL.Services
 
         public List<ApplicationUser> GetAllUsers(string userId)
         { var context = new ApplicationDbContext();
-            var allUser = context.Users.ToList();
+            var allUser = context.Users.Where(x=>x.Id!=userId).ToList();
             return allUser;
         }
-        public List<ApplicationUser> GetUserByName(string name)
+        public List<ApplicationUser> GetUserByName(string name, string userId)
         {
             var context = new ApplicationDbContext();
-            var allUser = context.Users.Where(x=>x.FirstName.Contains(name)|| x.LastName.Contains(name)).ToList();
+            var allUser = context.Users.Where(x=>x.FirstName.Contains(name)|| x.LastName.Contains(name)&&x.Id!=userId).ToList();
             return allUser;
         }
 
@@ -60,6 +60,7 @@ namespace GenTree.BLL.Services
         {
             var friendCanSeeTree = Uow.FriendshipRepository.AllowSeeTreeById(userId, friendId);
             friendCanSeeTree.CanSeeTree = canSeeTree;
+           
         }
 
         public List<Friendship> GetAllFriendByUser(string userId)
