@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,7 +37,6 @@
             this.secondNameLabel = new System.Windows.Forms.Label();
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.PhotoBox = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,16 @@
             this.groupBox.TabIndex = 1;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "idUser";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 101);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 37);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Переглянути дерево";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -94,9 +104,10 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(96, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "По баькові:";
+            this.label1.Text = "По батькові:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // secondNameLabel
             // 
@@ -124,16 +135,6 @@
             this.PhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PhotoBox.TabIndex = 0;
             this.PhotoBox.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(6, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 37);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Переглянути дерево";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FriendsView
             // 
