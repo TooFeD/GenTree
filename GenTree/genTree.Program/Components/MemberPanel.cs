@@ -140,7 +140,9 @@ namespace GenTree.Program.Forms
         }
         public void SetDateOfDethth()
         {
+            if(DateOfDeth.Year>1111)
             label4.Text = "Дата смерті: " + DateOfDeth.Date;
+           
         }
         public void SetDateOfBirth()
         {

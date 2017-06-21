@@ -64,7 +64,7 @@
             this.groupBox.Controls.Add(this.PhotoBox);
             this.groupBox.Location = new System.Drawing.Point(3, 0);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(353, 301);
+            this.groupBox.Size = new System.Drawing.Size(353, 176);
             this.groupBox.TabIndex = 0;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "MemberInfo";
@@ -186,7 +186,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox);
             this.Name = "MemberPanel";
-            this.Size = new System.Drawing.Size(361, 301);
+            this.Size = new System.Drawing.Size(361, 179);
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).EndInit();

@@ -101,7 +101,7 @@ namespace GenTree.Program.Forms
         }
 
         public void GenerateTree(Panel panel,string urlApi)
-        {
+        {  panel.Controls.Clear();
             List<AllMembersViewModel> members =
                 JsonConvert.DeserializeObject<List<AllMembersViewModel>>(
                     RequestController.HttpGet(urlApi, MainForm.Token).Result);
@@ -143,6 +143,16 @@ namespace GenTree.Program.Forms
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
            
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
 
         }
     }
